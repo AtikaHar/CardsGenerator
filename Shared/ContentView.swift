@@ -32,7 +32,7 @@ struct ContentView: View {
                 Card(picture: changeImage!)
                 }, label: {
             
-            ButtonLabel(text: "?", backgroundColor: Color("grey"))
+            ButtonLabel(text: "?", backgroundColor: Color("mauve"))
         })
         .padding(100)
         }
