@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
-    var picture : String?
-
-    @State var changeImage = pictures.randomElement()
+    var picture : String
+  
+    @State var changeImage : Picture
    
     var body: some View {
     
@@ -25,11 +25,12 @@ struct ContentView: View {
                 Spacer()
                 
         
-                Card(picture: changeImage!)
+                Card(picture: changeImage)
                     
                 Spacer()
                 Button(action: {
-                Card(picture: changeImage!)
+                    self.changeImage = RandomImage()
+                
                 }, label: {
             
             ButtonLabel(text: "?", backgroundColor: Color("mauve"))
@@ -41,11 +42,13 @@ struct ContentView: View {
         
     }
         
-//        func changeImage() {
-//
-//        var randomImage = pictures.randomElement()
-//
-//        }
+    func RandomImage() -> Picture {
+    
+            let result = pictures.randomElement()!
+
+            return result
+    
+        }
 
  
 
@@ -55,7 +58,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(picture: "picnic")
+        ContentView(picture: "picnic", changeImage: pictures[4])
     }
 }
 

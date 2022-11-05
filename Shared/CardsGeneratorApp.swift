@@ -11,7 +11,7 @@ import SwiftUI
 struct CardsGeneratorApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView(picture: "picnic")
+            ContentView(picture: "picnic", changeImage: pictures[4])
         }
     }
 }
